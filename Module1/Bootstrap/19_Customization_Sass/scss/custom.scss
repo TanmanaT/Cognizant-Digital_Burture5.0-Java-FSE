@@ -1,0 +1,5 @@
+// 1. Import our custom overrides variables
+@import "variables";
+
+// 2. Import Bootstrap's main SCSS entrypoint from node_modules
+@import "../../node_modules/bootstrap/scss/bootstrap";

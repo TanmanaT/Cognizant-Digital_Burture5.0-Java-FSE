@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 18: JavaScript Plugins</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+        .plugin-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+        .modal-content {
+            background-color: #1e293b !important;
+            color: white !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 20px !important;
+        }
+        .accordion-item {
+            background-color: rgba(255, 255, 255, 0.02) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+        .accordion-button {
+            background-color: rgba(255, 255, 255, 0.03) !important;
+            color: white !important;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(99, 102, 241, 0.15) !important;
+            color: #818cf8 !important;
+        }
+        .accordion-body {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <span class="badge bg-danger px-3 py-2 rounded-pill mb-2">Exercise 18.1 & 18.2</span>
+                <h1 class="h2 fw-bold text-white mb-0">JavaScript Plugins</h1>
+            </div>
+            <a href="../index.html" class="btn btn-outline-light rounded-pill btn-sm px-3">Back to Dashboard</a>
+        </div>
+
+        <div class="row g-4">
+            <!-- Exercise 18.1: Modal Popup -->
+            <div class="col-md-5">
+                <div class="plugin-card text-center h-100 d-flex flex-column justify-content-center align-items-center">
+                    <h2 class="h5 text-uppercase text-muted mb-4">Exercise 18.1: Interactive Modal</h2>
+                    <p class="text-white-50 small mb-4">Click below to open a clean overlay dialog box controlled by Bootstrap JS attributes:</p>
+                    <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#demoModal">
+                        Launch Demo Modal
+                    </button>
+                </div>
+            </div>
+
+            <!-- Exercise 18.2: Collapsible Accordion -->
+            <div class="col-md-7">
+                <div class="plugin-card h-100">
+                    <h2 class="h5 text-uppercase text-muted mb-4">Exercise 18.2: Collapsible Accordion Menu</h2>
+                    
+                    <div class="accordion" id="accordionExample">
+                        <!-- Accordion Item 1 -->
+                        <div class="accordion-item rounded-3 overflow-hidden mb-2">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How does the modal trigger work?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Modals use data attributes like <code>data-bs-toggle="modal"</code> and <code>data-bs-target="#demoModal"</code>. When clicked, Bootstrap's JavaScript automatically searches for the ID and applies active display styles with smooth fade animations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 2 -->
+                        <div class="accordion-item rounded-3 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What is the purpose of data-bs-parent?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Defining a parent target using <code>data-bs-parent="#accordionExample"</code> guarantees that only a single collapse item is displayed open at any given moment, collapsing previously active tabs automatically.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Element -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="demoModalLabel">Operation Successful</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-white-50">
+                    This interactive popup was launched seamlessly using Bootstrap 5's data-driven JS API without writing single line of custom script code.
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary rounded-pill px-3" data-bs-dismiss="modal">Close Dialog</button>
+                    <button type="button" class="btn btn-primary rounded-pill px-4">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

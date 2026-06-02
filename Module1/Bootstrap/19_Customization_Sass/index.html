@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 19: Sass Customization</title>
+    <!-- Compiled Bootstrap with custom SASS styles -->
+    <link href="dist/custom.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5 text-center">
+        <div class="custom-card p-5 mx-auto rounded-4 shadow-lg">
+            <span class="badge bg-primary px-3 py-2 mb-4">Exercise 19.1 & 19.2</span>
+            
+            <h1 class="display-6 fw-bold mb-3">Sass Compiled</h1>
+            <p class="text-muted mb-4">
+                This page uses Bootstrap 5 compiled locally from source Sass files. Notice the changes:
+            </p>
+
+            <div class="bg-dark p-3 rounded mb-4 text-start small border border-secondary border-opacity-25">
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2">🟢 <strong>Primary Color:</strong> Changed from default Blue (<code>#0d6efd</code>) to deep emerald (<code>#059669</code>).</li>
+                    <li>🟢 <strong>Border Radius:</strong> Rounded corners enlarged to pill-like radius.</li>
+                </ul>
+            </div>
+
+            <!-- This button uses btn-primary, which is now green/emerald and very rounded -->
+            <button class="btn btn-primary btn-lg w-100 py-3 shadow mb-4">
+                Custom Primary Button
+            </button>
+
+            <div class="d-flex justify-content-center gap-2">
+                <a href="../index.html" class="btn btn-outline-light rounded-pill px-4">Dashboard</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

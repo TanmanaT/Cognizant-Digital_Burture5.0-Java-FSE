@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2.2: JavaScript Plugins via Bundle</title>
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+        .card-custom {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+        /* Dark Theme Popovers with White Text */
+        .popover {
+            background-color: #1e293b !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+        .popover-header {
+            background-color: #0f172a !important;
+            color: #ffffff !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+        .popover-body {
+            color: #ffffff !important;
+        }
+        .popover .popover-arrow::after {
+            border-top-color: #1e293b !important;
+            border-bottom-color: #1e293b !important;
+            border-left-color: #1e293b !important;
+            border-right-color: #1e293b !important;
+        }
+        .tooltip-inner {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h1 class="h2 fw-bold text-white">JavaScript Plugins via Bundle</h1>
+            <a href="../index.html" class="btn btn-outline-light rounded-pill btn-sm px-3">Back to Dashboard</a>
+        </div>
+
+        <div class="row g-4">
+            <!-- Tooltip Demo -->
+            <div class="col-md-6">
+                <div class="card-custom p-4 h-100">
+                    <h3 class="h5 fw-bold text-indigo mb-3 text-info">Bootstrap Tooltips</h3>
+                    <p class="text-white">Tooltips require Popper.js, which is built directly into <code>bootstrap.bundle.min.js</code>. Hover over the buttons below:</p>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Tooltip Top</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">Tooltip Right</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popover Demo -->
+            <div class="col-md-6">
+                <div class="card-custom p-4 h-100">
+                    <h3 class="h5 fw-bold text-success mb-3">Bootstrap Popovers</h3>
+                    <p class="text-white">Popovers also rely on Popper.js. Click the button to toggle popover content:</p>
+                    <button type="button" class="btn btn-success" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="This popover works beautifully because Popper.js is included in the bundle file!">
+                        Toggle Popover
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS (includes Popper) -->
+    <script src="lib/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+        // Initialize popovers
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+</body>
+</html>

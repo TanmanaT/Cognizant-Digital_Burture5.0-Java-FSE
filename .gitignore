@@ -1,0 +1,18 @@
+# Centralized Git Ignore Configurations
+
+# Ignore node modules and packages
+node_modules/
+package-lock.json
+
+# Ignore compiled CSS / SASS maps
+*.css.map
+.sass-cache/
+
+# Ignore project specific folder
+Digital-Nurture-JavaFSE/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

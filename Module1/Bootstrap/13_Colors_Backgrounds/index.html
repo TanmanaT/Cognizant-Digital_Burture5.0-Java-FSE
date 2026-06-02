@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 13: Colors & Backgrounds</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0b0f19;
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+        .dashboard-header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .stat-card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: transform 0.2s ease;
+        }
+        .stat-card:hover {
+            transform: scale(1.02);
+        }
+        .text-muted {
+            color: rgba(255, 255, 255, 0.75) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Exercise 13.2: bg-gradient with bg-dark & white text -->
+    <header class="dashboard-header bg-dark bg-gradient text-white py-4 mb-5">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 fw-bold mb-0">System Operations Dashboard</h1>
+                <p class="small text-white-50 mb-0">Exercise 13.2: Styled with <code>.bg-dark .bg-gradient</code></p>
+            </div>
+            <a href="../index.html" class="btn btn-outline-light rounded-pill btn-sm px-3">Back to Dashboard</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Exercise 13.1: Contextual Backgrounds & Text Colors -->
+        <h2 class="h5 text-uppercase text-muted mb-4">Exercise 13.1: Contextual Operations Cards</h2>
+        
+        <div class="row g-4">
+            <!-- bg-primary -->
+            <div class="col-md-4 col-sm-6">
+                <div class="stat-card bg-primary text-white p-4">
+                    <span class="text-white-50 small text-uppercase tracking-wider">Network Load</span>
+                    <h3 class="display-6 fw-bold mt-2">84.2 Mbps</h3>
+                    <p class="small mb-0 mt-3 text-white-50">Operational capacity within bounds.</p>
+                </div>
+            </div>
+
+            <!-- bg-success -->
+            <div class="col-md-4 col-sm-6">
+                <div class="stat-card bg-success text-white p-4">
+                    <span class="text-white-50 small text-uppercase tracking-wider">Database Status</span>
+                    <h3 class="display-6 fw-bold mt-2">Active</h3>
+                    <p class="small mb-0 mt-3 text-white-50">All 12 clusters synced successfully.</p>
+                </div>
+            </div>
+
+            <!-- bg-warning -->
+            <div class="col-md-4 col-sm-6">
+                <div class="stat-card bg-warning text-dark p-4">
+                    <span class="text-dark-50 small text-uppercase tracking-wider">Disk Capacity</span>
+                    <h3 class="display-6 fw-bold mt-2">91% Full</h3>
+                    <p class="small mb-0 mt-3 text-dark-50">Warning: Clean cache files immediately.</p>
+                </div>
+            </div>
+
+            <!-- bg-danger -->
+            <div class="col-md-4 col-sm-6">
+                <div class="stat-card bg-danger text-white p-4">
+                    <span class="text-white-50 small text-uppercase tracking-wider">Error Outages</span>
+                    <h3 class="display-6 fw-bold mt-2">3 Critical</h3>
+                    <p class="small mb-0 mt-3 text-white-50">Node replication failed on region EU-West.</p>
+                </div>
+            </div>
+
+            <!-- bg-info -->
+            <div class="col-md-4 col-sm-6">
+                <div class="stat-card bg-info text-dark p-4">
+                    <span class="text-dark-50 small text-uppercase tracking-wider">System Information</span>
+                    <h3 class="display-6 fw-bold mt-2">v5.3.3</h3>
+                    <p class="small mb-0 mt-3 text-dark-50">Running latest stable Bootstrap packages.</p>
+                </div>
+            </div>
+
+            <!-- bg-secondary -->
+            <div class="col-md-4 col-sm-6">
+                <div class="stat-card bg-secondary text-white p-4">
+                    <span class="text-white-50 small text-uppercase tracking-wider">Backup Status</span>
+                    <h3 class="display-6 fw-bold mt-2">Pending</h3>
+                    <p class="small mb-0 mt-3 text-white-50">Scheduled next backup at 12:00 UTC.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
