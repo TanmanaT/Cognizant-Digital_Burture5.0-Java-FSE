@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises: Local Community Event Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Link to stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 style="font-size: 2.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">JS Event Hub</h1>
+        <nav style="margin-top: 1rem;">
+            <a href="#eventsBoard">Event Cards board</a>
+            <a href="#bookingForm">Sign-Up Register</a>
+            <a href="../index.html" style="font-weight: bold; color: #818cf8;">Dashboard</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem;">
+
+        <!-- Filter Controls Panel -->
+        <section id="eventsBoard" class="control-panel">
+            <h2 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1.5rem;">Interactive Search & Filters</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; align-items: end;">
+                <!-- Category Select Dropdown (Exercise 8) -->
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Filter Category</label>
+                    <select id="filterCategory" class="form-select" onchange="filterEvents()">
+                        <option value="">All Categories</option>
+                        <option value="Outreach">Outreach</option>
+                        <option value="Education">Education</option>
+                        <option value="Music">Music</option>
+                        <option value="Creative">Creative</option>
+                    </select>
+                </div>
+
+                <!-- Live Search Box (Exercise 8 keydown) -->
+                <div>
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Quick Name Search (Type...)</label>
+                    <input type="text" id="eventSearch" class="form-input" placeholder="Search by name" onkeyup="quickSearchEvents(event)">
+                </div>
+
+                <!-- Showcase Actions -->
+                <div style="display: flex; gap: 0.5rem;">
+                    <button onclick="showOnlyMusicEvents()" class="btn-secondary" style="flex: 1; padding: 0.75rem; font-size: 0.85rem;">Show Music Only</button>
+                    <button onclick="fetchEventsData()" class="btn-secondary" style="padding: 0.75rem; font-size: 0.85rem;"><i class="bi bi-arrow-clockwise"></i></button>
+                </div>
+            </div>
+
+            <!-- Total registrations tracker closure display (Exercise 4) -->
+            <div id="trackerBox" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+                <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; color: #818cf8;">Session Registration Counter (Closure-driven):</h4>
+                <div id="trackerCounts">
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.5);">No registrations logged in this session yet.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Spinner overlay (Exercise 9) -->
+        <div id="loadingSpinner" class="spinner-container" style="display: none;">
+            <div class="spinner"></div>
+            <div style="margin-left: 1rem; font-weight: 500;">Loading events buffer API...</div>
+        </div>
+
+        <!-- Dynamic Events Card Grid (Exercise 3 & 6 & 7) -->
+        <div id="eventsContainer" class="events-grid"></div>
+
+        <!-- Registration submission Form (Exercise 11 & 12) -->
+        <section id="bookingForm" class="control-panel" style="max-width: 600px; margin: 4rem auto 0 auto;">
+            <h2 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1.5rem;">Simulated AJAX Event Registration</h2>
+            
+            <form id="registrationForm" onsubmit="submitRegistrationForm(event)">
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem;">Full Name</label>
+                    <input type="text" name="userName" class="form-input" placeholder="Alex Carter" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem;">Email Address</label>
+                    <input type="email" name="userEmail" class="form-input" placeholder="alex@gmail.com" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem;">Selected Event</label>
+                    <select name="eventSelect" class="form-select" required>
+                        <option value="">-- Choose Target --</option>
+                        <option value="Tree Plantation">Civic Tree Plantation Drive</option>
+                        <option value="Web Bootcamp">Web Development Bootcamp</option>
+                        <option value="Music Festival">Local Music Festival</option>
+                        <option value="Art Fair">Youth Art Fair and Exhibition</option>
+                    </select>
+                </div>
+
+                <div id="formErrors" style="color: #f87171; font-size: 0.85rem; margin-bottom: 1rem; font-weight: 600;"></div>
+                <div id="formSuccess" style="color: #34d399; font-size: 0.85rem; margin-bottom: 1rem; font-weight: 600;"></div>
+
+                <!-- Submit Button with jQuery listener (Exercise 14) -->
+                <button type="submit" id="registerBtn" class="btn-primary">Register via Mock POST</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- jQuery CDN Integration (Exercise 14) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- Link to main JS script logic -->
+    <script src="main.js"></script>
+</body>
+</html>

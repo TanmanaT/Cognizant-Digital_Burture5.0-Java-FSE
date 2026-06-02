@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- HTML5 Base Template (Exercise 1) -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Exercises: Local Community Event Portal</title>
+    <!-- Google Fonts (Exercise 5) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Link to external styling sheet (Exercise 1) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS (Exercise 1 & 3) -->
+    <style>
+        /* Embedded styling override for Body Background */
+        body {
+            background-color: #0b0f19;
+            background-image: radial-gradient(circle at top, #111827 0%, #030712 100%);
+            min-height: 100vh;
+        }
+
+        /* Welcome Banner style (Exercise 3) */
+        #welcomeBanner {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== Navigation ==================== -->
+    <header>
+        <h1 style="font-size: 2.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">Civic Event Portal</h1>
+        <nav>
+            <a href="#events">Events Gallery</a>
+            <a href="#register">Register Event</a>
+            <a href="#feedback">Feedback Board</a>
+            <a href="help.html" target="_blank">Access Help Center</a>
+            <a href="../index.html" style="font-weight: bold; color: #818cf8;">Dashboard</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem;">
+
+        <!-- ==================== Welcome Section (Exercise 3) ==================== -->
+        <div id="welcomeBanner">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: white;">Welcome back, Resident!</h2>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.9); margin-top: 0.25rem;">
+                <span class="highlight">Emphasized Update:</span> Annual clean-up starts this weekend. Get a <span style="color: #ef4444; font-weight: bold;">FREE entry pass</span> (Exercise 3 Inline style) at the counters!
+            </p>
+        </div>
+
+        <!-- ==================== Image Gallery Table (Exercise 4) ==================== -->
+        <section id="events" style="margin-top: 4rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Events Gallery</h2>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Double-click on any event snapshot to enlarge it (Exercise 6: Double Click Event):</p>
+            
+            <div style="overflow-x: auto;">
+                <table class="gallery-table">
+                    <tbody>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td>
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='150'><rect width='100%' height='100%' fill='%236366f1'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Outfit' font-size='20'>Tree Planting</text></svg>" alt="Civic Tree Plantation" title="Civic Tree Plantation" class="gallery-img" ondblclick="zoomImage(this)">
+                                <div class="caption">Plantation Drive 2026</div>
+                            </td>
+                            <td>
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='150'><rect width='100%' height='100%' fill='%23ec4899'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Outfit' font-size='20'>Art Showcase</text></svg>" alt="Local Artists Fair" title="Local Artists Fair" class="gallery-img" ondblclick="zoomImage(this)">
+                                <div class="caption">Youth Art Fair</div>
+                            </td>
+                            <td>
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='150'><rect width='100%' height='100%' fill='%2310b981'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Outfit' font-size='20'>Town Hall</text></svg>" alt="Town Hall Meeting" title="Town Hall Meeting" class="gallery-img" ondblclick="zoomImage(this)">
+                                <div class="caption">Community Debate</div>
+                            </td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td>
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='150'><rect width='100%' height='100%' fill='%23f59e0b'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Outfit' font-size='20'>Clean Drive</text></svg>" alt="Neighborhood Sweep" title="Neighborhood Sweep" class="gallery-img" ondblclick="zoomImage(this)">
+                                <div class="caption">Park Cleanup Sweep</div>
+                            </td>
+                            <td>
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='150'><rect width='100%' height='100%' fill='%2306b6d4'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Outfit' font-size='20'>Food Market</text></svg>" alt="Farmers Market Day" title="Farmers Market Day" class="gallery-img" ondblclick="zoomImage(this)">
+                                <div class="caption">Farmers Market</div>
+                            </td>
+                            <td>
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='150'><rect width='100%' height='100%' fill='%238b5cf6'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='Outfit' font-size='20'>Sports Meet</text></svg>" alt="Annual Track Sports" title="Annual Track Sports" class="gallery-img" ondblclick="zoomImage(this)">
+                                <div class="caption">Civic Sports League</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================== Event Video Invite (Exercise 7) ==================== -->
+        <section style="margin-top: 4rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Event Promo Video</h2>
+            
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1.5rem; border-radius: 16px;">
+                <!-- HTML5 Native Video Tag with fallback stream -->
+                <video id="promoVideo" controls style="width: 100%; border-radius: 12px; max-height: 350px; background: black;" oncanplay="videoReady()">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="videoStatus" style="font-size: 0.85rem; color: #10b981; margin-top: 0.5rem; font-weight: 600;">Loading video stream data buffer...</div>
+            </div>
+        </section>
+
+        <!-- ==================== Geolocation & Preferences Mapping (Exercise 8 & 9) ==================== -->
+        <section style="margin-top: 4rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Civic Utility Services</h2>
+            
+            <div class="row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <!-- Geolocation Coordinate Mapping (Exercise 9) -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1.5rem; border-radius: 16px;">
+                    <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Geolocation Coordinate Locator</h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Locate nearest civic events using high accuracy satellite coordinates:</p>
+                    <button onclick="getUserLocation()" class="btn-secondary" style="width: 100%; padding: 0.75rem;">Find Nearby Events</button>
+                    <div id="locationOutput" style="font-size: 0.85rem; color: #38bdf8; margin-top: 1rem; font-weight: 600; line-height: 1.5;"></div>
+                </div>
+
+                <!-- Web Storage Preferences (Exercise 8) -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Storage Preferences Control</h3>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Flush stored user metadata cache from local and session parameters:</p>
+                    </div>
+                    <button onclick="clearStorage()" class="btn-secondary" style="width: 100%; border-color: rgba(239, 68, 68, 0.4); color: #f87171; padding: 0.75rem;">Clear Preferences</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Event Registration Form (Exercise 5 & 6 & 8) ==================== -->
+        <section id="register" style="margin-top: 4rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Event Registration</h2>
+            
+            <form id="regForm" class="registration-form" onsubmit="submitForm(event)">
+                <!-- Full Name (Autofocus field) -->
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="regName" class="form-control" placeholder="John Doe" required autofocus>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" id="regEmail" class="form-control" placeholder="name@example.com" required>
+                </div>
+
+                <!-- Phone number field validate onblur (Exercise 6) -->
+                <div class="form-group">
+                    <label class="form-label">Contact Phone Number</label>
+                    <input type="tel" id="regPhone" class="form-control" placeholder="e.g. 9876543210" onblur="validatePhone(this)" required>
+                    <div id="phoneError" style="font-size: 0.8rem; color: #f87171; margin-top: 0.25rem;"></div>
+                </div>
+
+                <!-- Event Select and dynamic Fee onchange (Exercise 6 & 8) -->
+                <div class="form-group">
+                    <label class="form-label">Select Event Type</label>
+                    <select id="regEvent" class="form-select" onchange="updateEventFee(this)" required>
+                        <option value="">-- Choose Target Category --</option>
+                        <option value="Outreach">Civic Tree Plantation</option>
+                        <option value="Education">Web Development Bootcamp</option>
+                        <option value="Creative">Youth Art Fair</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic Fee Output (Exercise 6) -->
+                <div class="form-group" style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; border: 1px dashed rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.9rem; font-weight: 600;">Selected Category Cost Fee: <span id="feeDisplay" style="color: #10b981;">₹0 (Select a category)</span></div>
+                </div>
+
+                <!-- Date Selection -->
+                <div class="form-group">
+                    <label class="form-label">Target Registration Date</label>
+                    <input type="date" id="regDate" class="form-control" required>
+                </div>
+
+                <!-- Message with characters counter (Exercise 6) -->
+                <div class="form-group">
+                    <label class="form-label">Additional Comments / Feedback</label>
+                    <textarea id="regMessage" class="form-control" placeholder="Tell us about special accommodations..." rows="4" onkeyup="countCharacters(this)" required></textarea>
+                    <div style="font-size: 0.75rem; text-align: right; color: rgba(255,255,255,0.5); margin-top: 0.25rem;" id="charCounter">Characters: 0</div>
+                </div>
+
+                <!-- Form output confirmation response (Exercise 5) -->
+                <div class="form-group">
+                    <output id="formOutput" style="display: block; font-size: 0.9rem; font-weight: 600; color: #10b981; text-align: center; margin-bottom: 1rem;"></output>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit Registration</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Modal Zoom overlay context (Exercise 4 & 6) -->
+    <div id="zoomOverlay" class="zoom-overlay" onclick="closeZoom()">
+        <img id="zoomedImg" src="" alt="Zoomed View">
+    </div>
+
+    <!-- ==================== Footer ==================== -->
+    <footer style="text-align: center; padding: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 5rem; font-size: 0.85rem; color: rgba(255,255,255,0.5);">
+        <div>City Council Civic Event Portal. All rights reserved.</div>
+    </footer>
+
+    <!-- JavaScript Event Triggers and Storage (Exercise 6 & 7 & 8 & 9 & 10) -->
+    <script>
+        // Track unsaved form status (Exercise 7)
+        let formDirty = false;
+        const inputs = document.querySelectorAll('.form-control, .form-select');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                formDirty = true;
+            });
+        });
+
+        window.onbeforeunload = function(e) {
+            if (formDirty) {
+                return "You have unsaved changes on the registration form. Are you sure you want to leave?";
+            }
+        };
+
+        // Load Storage preferences on initial render (Exercise 8)
+        window.onload = function() {
+            console.log("Portal session initialized successfully.");
+            const storedEvent = localStorage.getItem('preferredEventType');
+            if (storedEvent) {
+                const eventSelect = document.getElementById('regEvent');
+                eventSelect.value = storedEvent;
+                updateEventFee(eventSelect);
+                console.log("Restored event preference from localStorage:", storedEvent);
+            }
+        };
+
+        // Phone number validation onblur (Exercise 6)
+        function validatePhone(input) {
+            const phoneError = document.getElementById('phoneError');
+            const pattern = /^\d{10}$/;
+            if (!pattern.test(input.value.trim())) {
+                phoneError.textContent = "Please enter a valid 10-digit mobile number.";
+                console.warn("Input phone validation failed: 10 digit requirement.");
+            } else {
+                phoneError.textContent = "";
+            }
+        }
+
+        // Dropdown change mapping fee (Exercise 6 & 8)
+        function updateEventFee(select) {
+            const feeDisplay = document.getElementById('feeDisplay');
+            let fee = "₹0 (Select a category)";
+            
+            if (select.value === "Outreach") {
+                fee = "₹0 (Free community drive)";
+            } else if (select.value === "Education") {
+                fee = "₹2,499 (Standard fee)";
+            } else if (select.value === "Creative") {
+                fee = "₹499 (Material cost)";
+            }
+
+            feeDisplay.textContent = fee;
+
+            // Save selected target in localStorage (Exercise 8)
+            if (select.value) {
+                localStorage.setItem('preferredEventType', select.value);
+                console.log("Saved preferred target categories to localStorage:", select.value);
+            }
+        }
+
+        // Character feedback counter key events (Exercise 6)
+        function countCharacters(textarea) {
+            const charCounter = document.getElementById('charCounter');
+            charCounter.textContent = `Characters: ${textarea.value.length}`;
+        }
+
+        // Zoom image enlargement ondblclick (Exercise 4 & 6)
+        function zoomImage(img) {
+            const overlay = document.getElementById('zoomOverlay');
+            const zoomedImg = document.getElementById('zoomedImg');
+            zoomedImg.src = img.src;
+            overlay.style.display = 'flex';
+        }
+
+        function closeZoom() {
+            document.getElementById('zoomOverlay').style.display = 'none';
+        }
+
+        // Geolocation satellite mapping finder (Exercise 9)
+        function getUserLocation() {
+            const output = document.getElementById('locationOutput');
+            output.textContent = "Retrieving location coordinates...";
+            
+            const options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude.toFixed(6);
+                        const lon = position.coords.longitude.toFixed(6);
+                        output.innerHTML = `🛰️ Location Found!<br>Latitude: ${lat}<br>Longitude: ${lon}<br><span style="color: #10b981;">Found: Heritage Hall (~0.4 km away)</span>`;
+                        console.log(`Coordinates acquired: Latitude: ${lat}, Longitude: ${lon}`);
+                    },
+                    (error) => {
+                        let errMsg = "";
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                errMsg = "Error: Access permission denied by user browser settings.";
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                errMsg = "Error: Satellite coordinate signals currently unavailable.";
+                                break;
+                            case error.TIMEOUT:
+                                errMsg = "Error: Geolocation signal lookup timed out.";
+                                break;
+                        }
+                        output.innerHTML = `<span style="color: #f87171;">${errMsg}</span>`;
+                        console.error("Geolocation error occurred:", errMsg);
+                    },
+                    options
+                );
+            } else {
+                output.textContent = "Error: Geolocation is not supported by your current browser configuration.";
+            }
+        }
+
+        // Submit form handler outputs confirmation (Exercise 5)
+        function submitForm(event) {
+            event.preventDefault();
+            formDirty = false; // Reset warning state
+            const output = document.getElementById('formOutput');
+            const name = document.getElementById('regName').value;
+            output.textContent = `Registration Confirmed! Thank you, ${name}.`;
+            console.log("Registration successfully submitted.");
+        }
+
+        // Storage preference deletion (Exercise 8)
+        function clearStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Reset fields
+            document.getElementById('regEvent').value = "";
+            document.getElementById('feeDisplay').textContent = "₹0 (Select a category)";
+            
+            console.log("LocalStorage and SessionStorage caches flushed successfully.");
+            alert("All preferences cleared successfully!");
+        }
+
+        // HTML5 Video Invite triggers (Exercise 7)
+        function videoReady() {
+            const status = document.getElementById('videoStatus');
+            status.textContent = "✓ Video ready to play.";
+            console.log("Native video invite buffer loaded successfully.");
+        }
+    </script>
+</body>
+</html>

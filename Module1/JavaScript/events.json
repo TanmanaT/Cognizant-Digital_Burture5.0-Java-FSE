@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Civic Tree Plantation Drive",
+    "category": "Outreach",
+    "date": "2026-06-15",
+    "location": "Central Park",
+    "seats": 35,
+    "fee": 0
+  },
+  {
+    "id": 2,
+    "title": "Web Development Bootcamp",
+    "category": "Education",
+    "date": "2026-06-20",
+    "location": "Town Hall",
+    "seats": 5,
+    "fee": 2499
+  },
+  {
+    "id": 3,
+    "title": "Local Music Festival",
+    "category": "Music",
+    "date": "2026-06-25",
+    "location": "Sports Complex Auditorium",
+    "seats": 150,
+    "fee": 999
+  },
+  {
+    "id": 4,
+    "title": "Youth Art Fair and Exhibition",
+    "category": "Creative",
+    "date": "2026-06-28",
+    "location": "Heritage Plaza Corridor",
+    "seats": 80,
+    "fee": 499
+  },
+  {
+    "id": 5,
+    "title": "Past Historical Heritage Tour",
+    "category": "Education",
+    "date": "2025-01-01",
+    "location": "Old Town Quarter",
+    "seats": 0,
+    "fee": 150
+  }
+]
