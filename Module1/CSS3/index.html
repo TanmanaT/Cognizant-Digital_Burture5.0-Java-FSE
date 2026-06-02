@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Exercises: Local Community Event Portal</title>
+    <!-- Google Fonts for premium typography (Exercise 5) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to external stylesheet styles.css (Exercise 1) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Embedded / Internal Style Tag defining body background (Exercise 1 & 4) -->
+    <style>
+        body {
+            /* Linear background gradient fallback with a rich dark shade */
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at top, #1e1b4b 0%, #0f172a 100%);
+            min-height: 100vh;
+            color: #f8fafc;
+            padding-bottom: 5rem;
+        }
+        
+        /* Inline vs Internal helper classes for Box Model Display Playground */
+        .box-demo-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .box-item {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .box-hidden-visibility {
+            visibility: hidden;
+        }
+
+        .box-hidden-display {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ID Selector for header banner (Exercise 3) -->
+    <header id="mainHeader">
+        <h1 class="portal-title">City Civic Portal</h1>
+        <p class="lead">Exercise 1 - 11: Local Community Event Portal Showcase</p>
+        
+        <!-- Navigation Menu without list bullets (Exercise 6) -->
+        <ul class="nav-menu">
+            <li><a href="#events" class="nav-link">Events Board</a></li>
+            <li><a href="#admin" class="nav-link">Event Admin Table</a></li>
+            <li><a href="#news" class="nav-link">Community Bulletin</a></li>
+            <li><a href="#register" class="nav-link">Submit Event</a></li>
+            <li><a href="../index.html" class="nav-link" style="font-weight: bold; color: #818cf8;">Dashboard</a></li>
+        </ul>
+    </header>
+
+    <main class="container" style="max-width: 1100px; margin: 0 auto; padding: 2rem 1rem;">
+        
+        <!-- Exercise 1.1: Inline style making one heading red -->
+        <div style="background-color: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 1rem; margin-bottom: 2.5rem; text-align: center;">
+            <h3 style="color: #ef4444 !important; font-weight: 800; font-size: 1.1rem; letter-spacing: 1px;">
+                ⚠️ ALERT: Inline Styled Red Heading (Exercise 1.1)
+            </h3>
+            <p style="font-size: 0.9rem; margin-top: 0.25rem;">This heading color is defined using inline attributes: <code>style="color: #ef4444;"</code>.</p>
+        </div>
+
+        <!-- Exercise 3 & 4: Selectors Playground & Card Theming -->
+        <section id="events" style="margin-bottom: 4rem;">
+            <h2>Upcoming Events</h2>
+            <div class="gradient-bar"></div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                
+                <!-- Event Card 1 -->
+                <div class="eventCard">
+                    <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #818cf8;">Community Outreach</span>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">Annual Civic Tree Plantation</h3>
+                    <p class="event-description mb-3">Join hands with local volunteers at Central Park. Shovels, seeds, and refreshments will be provided by the city council.</p>
+                    <a href="#" style="color: #818cf8; text-decoration: underline; font-size: 0.9rem;">View Event Guidelines</a>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="eventCard">
+                    <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #ec4899;">Education</span>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">Web Development Bootcamp</h3>
+                    <p class="event-description mb-3">A weekend coding seminar introducing responsive CSS grid networks, styling frameworks, and visual debugging tools.</p>
+                    <a href="#" style="color: #818cf8; text-decoration: underline; font-size: 0.9rem;">Register Slot</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercise 7: Event Admin Table -->
+        <section id="admin" style="margin-bottom: 4rem;">
+            <h2>Zebra-Striped Admin Logs</h2>
+            <div class="gradient-bar"></div>
+            
+            <div class="table-container">
+                <table class="events-table">
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Category</th>
+                            <th>Venue</th>
+                            <th>Capacity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Civic Tree Plantation</td>
+                            <td>Outreach</td>
+                            <td>Central Park</td>
+                            <td>120 Slots</td>
+                        </tr>
+                        <tr>
+                            <td>Web Bootcamp</td>
+                            <td>Education</td>
+                            <td>Town Hall</td>
+                            <td>45 Slots</td>
+                        </tr>
+                        <tr>
+                            <td>Local Art Fair</td>
+                            <td>Creative</td>
+                            <td>Heritage Plaza</td>
+                            <td>200 Slots</td>
+                        </tr>
+                        <tr>
+                            <td>Youth Music Festival</td>
+                            <td>Entertainment</td>
+                            <td>Sports Complex</td>
+                            <td>500 Slots</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercise 8: Box Model Layout Controls - visibility vs display -->
+        <section style="margin-bottom: 4rem;">
+            <h2>Box Model Layout Playgrounds</h2>
+            <div class="gradient-bar"></div>
+            
+            <p class="event-description" style="margin-top: 1rem;">
+                Compare <code>visibility: hidden;</code> (space is reserved, content is blank) vs <code>display: none;</code> (element is removed from the DOM layout flow). Use the buttons below:
+            </p>
+
+            <div class="box-demo-container">
+                <div class="box-item" id="box1">Box 1</div>
+                <div class="box-item" id="box2">Box 2 (Target)</div>
+                <div class="box-item" id="box3">Box 3</div>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+                <button onclick="toggleVisibility()" class="nav-link" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; color: white;">Toggle Visibility: Hidden</button>
+                <button onclick="toggleDisplay()" class="nav-link" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; color: white;">Toggle Display: None</button>
+                <button onclick="resetBoxes()" class="nav-link" style="background: #6366f1; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; color: white; border: none;">Reset Boxes</button>
+            </div>
+        </section>
+
+        <!-- Exercise 9: newspaper multiple columns -->
+        <section id="news" style="margin-bottom: 4rem;">
+            <h2>Community Newspaper Columns</h2>
+            <div class="gradient-bar"></div>
+            
+            <div class="newspaper-article" style="margin-top: 1.5rem;">
+                <p>
+                    The local city council announced a new green initiative this morning aimed at reducing landfill waste by up to thirty percent over the next two years. Residents are encouraged to register for composting kits and join weekend workshops led by environmental specialists at the Civic Hub. Funding has been allocated directly from the regional municipal budget to ensure access remains free of cost to all neighborhoods.
+                </p>
+                <p>
+                    Additionally, urban planning committees are soliciting active feedback regarding pedestrian zones. Public squares around the Heritage Center will expand walking corridors and establish designated spaces for local arts and farmers markets. Complete survey forms can be accessed on the civic portal homepage or submitted at regional library feedback kiosks.
+                </p>
+            </div>
+        </section>
+
+        <!-- Exercise 8.2: Form outlines & Exercise 10: Responsive Web Design inputs layout -->
+        <section id="register" style="margin-bottom: 4rem;">
+            <h2>Submit New Community Event</h2>
+            <div class="gradient-bar"></div>
+            
+            <form style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding: 2rem; border-radius: 20px; margin-top: 2rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.7);">Event Title</label>
+                        <input type="text" class="form-input" placeholder="e.g. Art & Craft Fair" required>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.7);">Venue</label>
+                        <input type="text" class="form-input" placeholder="e.g. Town Hall Plaza" required>
+                    </div>
+                </div>
+                <button type="submit" style="background: linear-gradient(90deg, #6366f1 0%, #ec4899 100%); color: white; border: none; padding: 0.75rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; display: block; width: 100%; transition: opacity 0.2s;">
+                    Publish Event Submission
+                </button>
+            </form>
+        </section>
+
+        <!-- Exercise 11: Developer Tools Debug guide -->
+        <section style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem;">
+            <h2 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem;"><i class="bi bi-bug-fill" style="margin-right: 0.5rem; color: #818cf8;"></i>Exercise 11: DevTools Debugging Guide</h2>
+            <div class="row" style="font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6;">
+                <ul style="padding-left: 1.25rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Device Mode Simulation:</strong> Open Chrome/Firefox DevTools (F12) and toggle the mobile device toolbar overlay to review responsive layout breakpoints.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Inspect Elements:</strong> Use the element picker to inspect <code>margin</code>, <code>padding</code>, and <code>border</code> box model highlights.</li>
+                    <li><strong>Network Tracking:</strong> Use the Network tab to confirm that <code>styles.css</code> loads successfully with code status 200.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Interactive Toggle Scripts for Display vs Visibility (Exercise 8)
+        const box2 = document.getElementById('box2');
+
+        function toggleVisibility() {
+            resetBoxes();
+            box2.classList.add('box-hidden-visibility');
+        }
+
+        function toggleDisplay() {
+            resetBoxes();
+            box2.classList.add('box-hidden-display');
+        }
+
+        function resetBoxes() {
+            box2.className = 'box-item';
+        }
+    </script>
+</body>
+</html>

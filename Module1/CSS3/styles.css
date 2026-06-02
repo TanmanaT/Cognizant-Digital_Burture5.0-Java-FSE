@@ -1,0 +1,230 @@
+/* ==========================================
+   CSS3 EXERCISES: styles.css
+   Theme: Local Community Event Portal
+   ========================================== */
+
+/* ------------------------------------------
+   2. CSS Syntax, Comments, and Reset
+   ------------------------------------------ */
+
+/* Universal Reset: Standardizing margins, padding, and box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Body Fallback Styling - Main styles are controlled internally in head */
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* ------------------------------------------
+   3. Selectors Playground
+   ------------------------------------------ */
+
+/* Element Selector: Applying styles to all h2 headings */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Grouping Selector: Styling h3 headings and paragraph descriptions together */
+h3, p {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.025em;
+}
+
+/* ID Selector: Main hero banner section */
+#mainHeader {
+    background: linear-gradient(135deg, rgba(30, 27, 75, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 0 0 24px 24px;
+}
+
+/* Class Selector: Event card container elements */
+.eventCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.eventCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* ------------------------------------------
+   4. Color, Background, and Gradients
+   ------------------------------------------ */
+
+/* Linear Gradient Header accents */
+.gradient-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1 0%, #ec4899 100%);
+    width: 80px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+/* ------------------------------------------
+   5. Typography and Text Formatting
+   ------------------------------------------ */
+.portal-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.event-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(248, 250, 252, 0.8);
+    text-align: justify;
+}
+
+/* ------------------------------------------
+   6. Link and List Styling
+   ------------------------------------------ */
+
+/* Custom styled navigation menu links using pseudo-classes */
+.nav-menu {
+    list-style-type: none; /* Remove default bullets */
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.nav-menu li {
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+}
+
+/* Anchor link states */
+.nav-link:link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link:visited {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link:hover {
+    color: #818cf8;
+    text-decoration: none;
+}
+
+.nav-link:active {
+    color: #ec4899;
+}
+
+/* ------------------------------------------
+   7. Table Styling
+   ------------------------------------------ */
+.events-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse border margins */
+    margin: 2rem 0;
+    font-size: 0.95rem;
+}
+
+.events-table th, 
+.events-table td {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.events-table th {
+    background-color: rgba(99, 102, 241, 0.2);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Zebra striping for even table rows */
+.events-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.events-table tr:hover {
+    background-color: rgba(99, 102, 241, 0.05);
+}
+
+/* ------------------------------------------
+   8. Box Model & Layout Customization
+   ------------------------------------------ */
+
+/* Outlines for focused inputs inside forms */
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    outline: none; /* Reset browser default */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Outline styling when selected */
+.form-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* ------------------------------------------
+   9. Multiple Columns in Text
+   ------------------------------------------ */
+.newspaper-article {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: justify;
+}
+
+/* ------------------------------------------
+   10. Responsive Web Design
+   ------------------------------------------ */
+@media (max-width: 767.98px) {
+    /* Stack navigation menu links vertically instead of horizontally */
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    /* Scaling font sizes for readability on mobile screen boundaries */
+    .portal-title {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Multiple columns collapse back to single row on small screen sizes */
+    .newspaper-article {
+        column-count: 1;
+    }
+
+    /* Table horizontal overflow handling on mobile screens */
+    .table-container {
+        overflow-x: auto;
+    }
+}
