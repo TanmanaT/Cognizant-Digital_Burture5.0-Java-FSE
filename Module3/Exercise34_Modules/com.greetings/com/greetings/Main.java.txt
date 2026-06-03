@@ -1,0 +1,12 @@
+package com.greetings;
+
+import com.utils.StringUtils;
+
+public class Main {
+    public static void main(String[] args) {
+        String original = "hello from modular java!";
+        String capitalized = StringUtils.capitalize(original);
+        System.out.println("Original String: " + original);
+        System.out.println("Capitalized via com.utils: " + capitalized);
+    }
+}
